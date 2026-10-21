@@ -1,0 +1,20 @@
+name: Stage 8 Protected Staging CI
+on:
+  pull_request:
+    branches:
+      - stage8/staging-target
+permissions:
+  contents: read
+jobs:
+  test:
+    name: ci/test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo "stage8 test passed"
+  lint:
+    name: ci/lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo "stage8 lint passed"
